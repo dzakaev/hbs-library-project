@@ -1,0 +1,25 @@
+<h1>
+  Посетитель {{profile.name}}:
+  {{#if profile.isBlocked}}
+    "Заблокирован"
+  {{else}}
+    "Активен"
+  {{/if}}
+</h1>
+<ul class="bookList">
+{{#each profile.rentBook}}
+
+    <li class="list">
+      <div class="book-A">{{name}}
+        <div class="cab-div">
+          <img class="bookImg" src="{{img}}"/>
+          <a href="/users/{{../profile._id}}/returnBook/{{_id}}"> <button> Вернуть книгу </button>
+          </a>
+        </div>
+      </div>
+    </li>
+
+{{/each}}
+</ul>
+
+

@@ -1,0 +1,23 @@
+<div style="font-size: xx-large">
+  Пользователь: {{user.name}} <a href="/admin/block/{{user._id}}/"> <button> Заблокировать </button> </a>
+  <a href="/admin/unblock/{{user._id}}/"> <button> Разблокировать </button> </a>
+  <div>Состояние: {{#if user.isBlocked}}
+    "Заблокирован"
+  {{else}}
+    "Активен"
+  {{/if}}</div>
+</div>
+<ul class="bookList">
+  {{#each user.rentBook}}
+
+    <li class="list">
+      <div class="book-A">{{name}}
+        <div class="cab-div">
+          <img class="bookImg" src="{{img}}"/>
+          <a href="/admin/{{../user._id}}/takeBook/{{_id}}/"> <button> Вернуть книгу </button>
+          </a>
+        </div>
+      </div>
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,36 @@
+<div class="main">
+  <div>
+      <a class="lib" href="/users/{{userId}}/books/{{_id}}"> Библиотека </a>
+  </div>
+  <div>
+    <ul class="genre-ul">
+      {{#each genre}}
+        <li class="genres-menu">
+          <a  href="/users/{{../userId}}/genres/{{_id}}">{{name}}</a>
+        </li>
+      {{/each}}
+      <div style="list-style: none;
+      text-decoration: underline;
+      padding: inherit; font-size: xx-large">
+        <a style="color: black" href="/users/{{userId}}"> Личный кабинет </a>
+      </div>
+
+    </ul>
+  </div>
+</div>
+
+
+  <ul class="bookList">
+    {{#each book}}
+
+        <li class="list">
+          <a class="book-A" href="/users/{{../userId}}/books/{{_id}}">{{name}}
+             <div>
+               <img class="bookImg" src="{{img}}"/>
+             </div>
+          </a>
+          <a href="/users/{{../userId}}/rentBook/{{_id}}"><button> Арендовать </button></a>
+        </li>
+
+    {{/each}}
+  </ul>
